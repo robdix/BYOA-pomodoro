@@ -1,0 +1,133 @@
+:root {
+  --primary: #ff6b6b;
+  --secondary: #4ecdc4;
+  --dark: #2d3436;
+  --light: #f9f9f9;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background-color: var(--light);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--dark);
+}
+
+.timer-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px var(--shadow);
+  width: 90%;
+  max-width: 400px;
+}
+
+.time-display {
+  font-size: 5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 1rem 0;
+  font-variant-numeric: tabular-nums;
+  color: var(--dark);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.mode-controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+button {
+  border: none;
+  padding: 0.8rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.controls button {
+  background: var(--dark);
+  color: white;
+}
+
+.controls button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px var(--shadow);
+}
+
+.mode-controls button {
+  background: #eee;
+  color: var(--dark);
+}
+
+.mode-controls button.active {
+  background: var(--primary);
+  color: white;
+}
+
+#start {
+  background: var(--primary);
+}
+
+#pause {
+  background: var(--secondary);
+}
+
+/* Add smooth transitions */
+.time-display, button {
+  transition: all 0.3s ease;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .timer-container {
+    padding: 1.5rem;
+  }
+  
+  .time-display {
+    font-size: 4rem;
+  }
+  
+  button {
+    padding: 0.7rem;
+    font-size: 0.8rem;
+  }
+} 
+
+.task-input {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.task-input input {
+    width: calc(100% - 1.6rem);
+    padding: 0.8rem;
+    border: 2px solid var(--shadow);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+    text-align: center;
+}
+
+.task-input input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.task-input input.error {
+    border-color: var(--primary);
+} 
